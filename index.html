@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-    
+	  
     <div id="player"></div>
 	  	  
     <script>
@@ -97,9 +97,21 @@
       }
       function checkAnswer() {
         var answer = $('#quiz input:radio:checked').val();
-	console.log(answer);
-	$("#quiz").modal("hide");
-	player.playVideo();
+	if (answer == "maybe") {
+	  alert("That's correct!");
+	  $("#quiz").modal("hide");
+	  player.playVideo();
+	} else if (answer == "prime") {
+	  alert("I mean, you're not wrong...");
+	  $("#quiz").modal("hide");
+	  player.playVideo();
+	} else if (answer == "south") {
+	  alert("Nope, try again!");
+	} else if (answer == "nope") {
+	  alert("Cool, but that's not what I asked...");
+	} else {
+	  alert("Please select an answer.");
+	}
       }
     </script>
 	  
