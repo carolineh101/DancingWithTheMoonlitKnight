@@ -45,7 +45,7 @@
             </div>
           </div>
 	  <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="checkAnswer()">Submit</button>
           </div>
         </div>
       </div>
@@ -94,6 +94,12 @@
       function stopVideo() {
         player.pauseVideo();
 	$("#quiz").modal();
+      }
+      function checkAnswer() {
+        var answer = $('#quiz input:radio:checked').val();
+	console.log(answer);
+	$("#quiz").modal("hide");
+	player.playVideo();
       }
     </script>
 	  
